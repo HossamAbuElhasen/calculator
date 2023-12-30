@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    
+    <title>Calculator</title>
+    
+</head>
+<body>
+
+    <form name="Calc">
+        <h1>Calculator</h1>
+
+        <table>
+            <tr>
+                <td colspan="4">
+                    <input type="text" name="Input" size="10">
+                </td>
+            </tr>
+            <tr>
+               <td><input type="button" name="plus" value="+" OnClick="Calc.Input.value += ' + '"></td>
+               <td><input type="button" name="minus" value="-" OnClick="Calc.Input.value += ' - '"></td>
+               <td><input type="button" name="times" value="*" OnClick="Calc.Input.value += ' * '"></td>
+               <td><input type="button" name="backspace" value=" ← " OnClick="backspace()"> </td> 
+
+
+            </tr>
+            <tr>
+                <td><input type="button" name="seven" value="1" OnClick="Calc.Input.value += '1'"></td>
+                <td><input type="button" name="eight" value="2" OnClick="Calc.Input.value += '2'"></td>
+                <td><input type="button" name="nine" value="3" OnClick="Calc.Input.value += '3'"></td>
+                <td><input type="button" name="div" value="/" OnClick="Calc.Input.value += ' / '"></td>
+            </tr>
+            <tr>
+                <td><input type="button" name="four" value="4" OnClick="Calc.Input.value += '4'"></td>
+                <td><input type="button" name="five" value="5" OnClick="Calc.Input.value += '5'"></td>
+                <td><input type="button" name="six" value="6" OnClick="Calc.Input.value += '6'"></td>
+                <td><input type="button" name="clear" value="." OnClick="Calc.Input.value += '.'"></td>
+            </tr>
+            <tr>
+                <td><input type="button" name="one" value="7" OnClick="Calc.Input.value += '7'"></td>
+                <td><input type="button" name="two" value="8" OnClick="Calc.Input.value += '8'"></td>
+                <td><input type="button" name="three" value="9" OnClick="Calc.Input.value += '9'"></td>
+                <td><input type="button" name="DoIt" value="=" OnClick="Calc.Input.value = eval(Calc.Input.value)"></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="button" name="zero" value="0" OnClick="Calc.Input.value += '0'"></td>
+                <td><input type="button" name="clear" value="C" OnClick="Calc.Input.value = ''"></td>
+            </tr>
+        </table>
+    </form>
+    <script>
+        function backspace() {
+            var currentInput = Calc.Input.value;
+            Calc.Input.value = currentInput.substring(0, currentInput.length - 1);
+        }
+    </script>
+    
+</body>
+</html>
